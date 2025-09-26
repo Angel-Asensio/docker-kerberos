@@ -18,8 +18,8 @@ docker compose up -d
 # Administer
 ```
 alias kadmin.example.org="docker exec -ti kadmin kadmin.local"
-kadmin.example.org -q "add_principal mans0954@EXAMPLE.ORG"
-kadmin.example.org -q "add_principal mans0954/admin@EXAMPLE.ORG"
+kadmin.example.org -q "add_principal angel@EXAMPLE.ORG"
+kadmin.example.org -q "add_principal angel/admin@EXAMPLE.ORG"
 ```
 N.B. kadm5.acl is configured so that all principals ending /admin have admin rights
 
@@ -48,7 +48,7 @@ Use 127.0.0.1 or localhost to avoid DNS resolution issues. If your Docker setup 
 
 * Test authentication: 
 ```
-kinit mans0954@EXAMPLE.ORG
+kinit angel@EXAMPLE.ORG
 ```
 It should prompt for the password you set earlier.
 
@@ -60,7 +60,7 @@ klist
 =>
 ```
 Credentials cache: API:195A7016-062F-4153-89E7-01507F1E3D8C
-        Principal: mans0954@EXAMPLE.ORG
+        Principal: angel@EXAMPLE.ORG
 
   Issued                Expires               Principal
 Sep 26 13:55:46 2025  Sep 26 23:55:42 2025  krbtgt/EXAMPLE.ORG@EXAMPLE.
