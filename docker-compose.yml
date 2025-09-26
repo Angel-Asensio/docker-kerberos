@@ -10,6 +10,11 @@ services:
       - ./kadmin/krb5.conf:/etc/kadmin/krb5.conf
     networks:
       - example
+    ports:
+      - "749:749/tcp"
+    depends_on:
+      - kdc
+
   kdc:
     build: kdc/
     image: mans0954/kerberos-kdc
@@ -20,6 +25,9 @@ services:
       - ./kdc/krb5.conf:/etc/kdc/krb5.conf
     networks:
       - example
+    ports:
+      - "88:88/udp"
+      - "88:88/tcp" 
 
 volumes:
   krb5kdc: {}
