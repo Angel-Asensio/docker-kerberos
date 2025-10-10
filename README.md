@@ -10,6 +10,8 @@ It has the following components:
 * Kerberos Administration Server: https://hub.docker.com/r/mans0954/kerberos-kadmin/
 * Kerberos v5 Authentication Service and Key Distribution Center https://hub.docker.com/r/mans0954/kerberos-kdc/
 
+# Short Tutorial  
+
 ## Run (MACOS) in detached mode (-d)
 ```
 docker compose up -d 
@@ -88,3 +90,4 @@ Sep 26 13:55:46 2025  Sep 26 23:55:42 2025  krbtgt/EXAMPLE.ORG@EXAMPLE.ORG
 - **"Pre-authentication failed"**: Wrong password or principal not added correctly.
 - **"No such file or directory"**: krb5.conf missing or misconfigured.
 - **"Clock skew too great"**: Fix time sync as above.
+- **"kadmin Cannot open DB2 database '/etc/krb5kdc/principal': No such file or directory while initializing, aborting"**: This error indicates that the Kerberos database has not been initialized.
